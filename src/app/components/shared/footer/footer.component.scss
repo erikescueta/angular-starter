@@ -1,0 +1,22 @@
+@mixin footer-theme($theme) {
+    $primary: map-get($theme, primary);
+    $accent: map-get($theme, accent);
+    $warn: map-get($theme, warn);
+
+    .footer {
+        width: 100vw;
+        background-color: mat-color($accent);
+        background-image: linear-gradient(to bottom right, mat-color($accent, A600), mat-color($accent, A400));
+        border-top: 0.5rem solid mat-color($accent, A800);
+        display: flex;
+        padding: 1rem;
+        position: fixed;
+        bottom: 0;
+
+        p {
+            margin: 0;
+            padding: 0;
+            color: mat-contrast($accent, A800);
+        }
+    }
+}

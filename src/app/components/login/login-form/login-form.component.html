@@ -1,0 +1,21 @@
+<div class="form login-form" [formGroup]="loginForm">
+    <div class="form-control">
+        <label for="userName">Username</label>
+        <input id="userName"
+            type="text"
+            value=""
+            placeholder="Enter your username"
+            formControlName="userName"
+            (keydown)="validateForm()"
+            required />
+        <sub class="form-error"
+            *ngIf="!validUserName && loginForm.get('userName').value !== ''">
+            There is an error with your username. Please try again.
+        </sub>
+    </div>
+    <div class="form-button">
+        <button class="login-button"
+            [disabled]="!validForm"
+            (click)="login()">Login</button>
+    </div>
+</div>

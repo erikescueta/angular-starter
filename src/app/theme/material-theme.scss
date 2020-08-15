@@ -1,0 +1,98 @@
+@import "~@angular/material/theming";
+@import "./greyscale-palette";
+@import "./../components/shared/header/header.component";
+@import "./../components/shared/footer/footer.component";
+
+@include mat-core();
+
+$color-primary: mat-palette($greyscale-palette, 600, 300, 800);
+$color-accent: mat-palette($greyscale-palette, A600, A300, A800);
+$color-warn: mat-palette($mat-red, A700);
+
+$material-theme: mat-light-theme(
+    (
+        color: (
+            primary: $color-primary,
+            accent: $color-accent,
+            warn: $color-warn,
+        ),
+    )
+);
+
+@include angular-material-theme($material-theme);
+@include header-theme($material-theme);
+@include footer-theme($material-theme);
+
+html,
+body {
+    border: 0;
+    width: 100vw;
+    min-height: 100vh;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    font-size: 100%;
+    margin: 0;
+    outline: 0;
+    padding: 0;
+    overflow: auto;
+    background-color: mat-color($color-primary, 50);
+
+    button {
+        &:hover {
+            cursor: pointer;
+        }
+        &[disabled] {
+            cursor: not-allowed;
+        }
+    }
+
+    .form {
+        .form-control {
+            display: inline-block;
+            width: 100%;
+            padding: 0.5rem 0;
+
+            label {
+                display: inline-block;
+                width: 100%;
+                font-size: 0.8rem;
+                font-weight: 300;
+            }
+
+            input {
+                box-sizing: border-box;
+
+                &[type='text'] {
+                    display: inline-block;
+                    width: 100%;
+                    padding: 0.5rem;
+                    font-size: 1rem;
+                    outline: none;
+
+                    &:hover,
+                    &:active,
+                    &:focus {
+                        outline: none;
+                    }
+                }
+            }
+
+            .form-error {
+                display: inline-block;
+                width: 100%;
+                color: mat-color($color-warn);
+            }
+        }
+
+        .form-button {
+            display: inline-block;
+            width: 100%;
+            padding: 0.5rem 0;
+            text-align: right;
+
+            button {
+                min-width: 96px;
+                padding: 0.5rem 0.75rem;
+            }
+        }
+    }
+}

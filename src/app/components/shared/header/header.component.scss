@@ -1,0 +1,18 @@
+@mixin header-theme($theme) {
+    $primary: map-get($theme, primary);
+    $accent: map-get($theme, accent);
+    $warn: map-get($theme, warn);
+
+    .header {
+        width: 100vw;
+        background-color: mat-color($primary);
+        background-image: linear-gradient(to bottom right, mat-color($primary, 800), mat-color($primary, 600));
+        border-bottom: 0.5rem solid mat-color($primary, 800);
+        display: flex;
+        padding: 1rem;
+
+        h1 {
+            color: mat-contrast($primary, 800);
+        }
+    }
+}
