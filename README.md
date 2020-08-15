@@ -1,6 +1,14 @@
-# AngularStarterSite
+# Angular Starter Site
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.5.
+
+Basic integrations include:
+
+* Angular Material integration with custom palettes and themes
+* Simple login module and form with validation service
+* Token-based authentication for login using local storage
+* Lazy-loaded routes and module-based setup with AuthGuard implemented
+* JWT and UUID NPM modules in case you need more robust security methods
 
 ## Development server
 
