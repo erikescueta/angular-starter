@@ -1,0 +1,14 @@
+:host {
+    ::ng-deep {
+        .login {
+            height: 480px;
+            width: 100%;
+            position: absolute;
+            top: 50%;
+            margin-top: -240px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+}
