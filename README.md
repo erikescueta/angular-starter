@@ -2,6 +2,8 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.5.
 
+Updated to Angular version 11.0.5
+
 Basic integrations include:
 
 * Angular Material integration with custom palettes and themes

@@ -1,28 +1,38 @@
+/* Import Angular Material theming */
 @import "~@angular/material/theming";
-@import "./greyscale-palette";
+
+/* Insert path to your custom palette here */
+@import "./palettes/greyscale-palette";
+
+/* Insert paths to custom component stylesheets here */
 @import "./../components/shared/header/header.component";
 @import "./../components/shared/footer/footer.component";
 
+/* Import Angular Material core styles */
 @include mat-core();
 
-$color-primary: mat-palette($greyscale-palette, 600, 300, 800);
-$color-accent: mat-palette($greyscale-palette, A600, A300, A800);
+/* Set primary, secondary and warning color palettes */
+$color-primary: mat-palette($palette, 600, 300, 800);
+$color-accent: mat-palette($palette, A600, A300, A800);
 $color-warn: mat-palette($mat-red, A700);
 
+/* Assign palettes to main theme variable */
 $material-theme: mat-light-theme(
     (
         color: (
             primary: $color-primary,
             accent: $color-accent,
             warn: $color-warn,
-        ),
+        )
     )
 );
 
+/* Include custom component theme handlers from their stylesheets */
 @include angular-material-theme($material-theme);
 @include header-theme($material-theme);
 @include footer-theme($material-theme);
 
+/* Insert any global styles here */
 html,
 body {
     border: 0;
