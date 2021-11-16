@@ -1,3 +1,4 @@
+@use '~@angular/material' as mat;
 @mixin header-theme($theme) {
     $primary: map-get($theme, primary);
     $accent: map-get($theme, accent);
@@ -5,14 +6,14 @@
 
     .header {
         width: 100vw;
-        background-color: mat-color($primary);
-        background-image: linear-gradient(to bottom right, mat-color($primary, 800), mat-color($primary, 600));
-        border-bottom: 0.5rem solid mat-color($primary, 800);
+        background-color: mat.get-color-from-palette($primary);
+        background-image: linear-gradient(to bottom right, mat.get-color-from-palette($primary, 800), mat.get-color-from-palette($primary, 600));
+        border-bottom: 0.5rem solid mat.get-color-from-palette($primary, 800);
         display: flex;
         padding: 1rem;
 
         h1 {
-            color: mat-contrast($primary, 800);
+            color: mat.get-contrast-color-from-palette($primary, 800);
         }
     }
 }

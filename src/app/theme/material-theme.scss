@@ -1,5 +1,5 @@
 /* Import Angular Material theming */
-@import "~@angular/material/theming";
+@use '~@angular/material' as mat;
 
 /* Insert path to your custom palette here */
 @import "./palettes/greyscale-palette";
@@ -9,15 +9,15 @@
 @import "./../components/shared/footer/footer.component";
 
 /* Import Angular Material core styles */
-@include mat-core();
+@include mat.core();
 
 /* Set primary, secondary and warning color palettes */
-$color-primary: mat-palette($palette, 600, 300, 800);
-$color-accent: mat-palette($palette, A600, A300, A800);
-$color-warn: mat-palette($mat-red, A700);
+$color-primary: mat.define-palette($palette, 600, 300, 800);
+$color-accent: mat.define-palette($palette, A600, A300, A800);
+$color-warn: mat.define-palette(mat.$red-palette, A700);
 
 /* Assign palettes to main theme variable */
-$material-theme: mat-light-theme(
+$material-theme: mat.define-light-theme(
     (
         color: (
             primary: $color-primary,
@@ -28,7 +28,7 @@ $material-theme: mat-light-theme(
 );
 
 /* Include custom component theme handlers from their stylesheets */
-@include angular-material-theme($material-theme);
+@include mat.all-component-themes($material-theme);
 @include header-theme($material-theme);
 @include footer-theme($material-theme);
 
@@ -44,7 +44,7 @@ body {
     outline: 0;
     padding: 0;
     overflow: auto;
-    background-color: mat-color($color-primary, 50);
+    background-color: mat.get-color-from-palette($color-primary, 50);
 
     button {
         &:hover {
@@ -89,7 +89,7 @@ body {
             .form-error {
                 display: inline-block;
                 width: 100%;
-                color: mat-color($color-warn);
+                color: mat.get-color-from-palette($color-warn);
             }
         }
 
