@@ -2,7 +2,7 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.5.
 
-Updated to Angular version 12.2.13
+Updated to Angular version 13.0.1
 
 Basic integrations include:
 
