@@ -1,5 +1,5 @@
 /* Import Angular Material theming */
-@use '~@angular/material' as mat;
+@use '@angular/material' as mat;
 
 /* Insert path to your custom palette here */
 @import "./palettes/greyscale-palette";
